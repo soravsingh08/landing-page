@@ -1,0 +1,393 @@
+import type { LandingConfig } from "../landing";
+import chaoPhraya from "@/assets/images/thailand/bangkok-chao-phraya-dusk.webp";
+import pattayaAerial from "@/assets/images/thailand/pattaya-beach-aerial.webp";
+import bangkokNight from "@/assets/images/thailand/bangkok-skyline-night.webp";
+import watArun from "@/assets/images/thailand/wat-arun-bangkok.webp";
+import watArunChapel from "@/assets/images/thailand/wat-arun-chapel.webp";
+import grandPalace from "@/assets/images/thailand/grand-palace-roof.webp";
+import coralIsland from "@/assets/images/thailand/coral-island-sunset.webp";
+import sanctuary from "@/assets/images/thailand/sanctuary-of-truth.webp";
+import floatingMarket from "@/assets/images/thailand/floating-market.webp";
+import nongNooch from "@/assets/images/thailand/nong-nooch-garden.webp";
+import phiPhi from "@/assets/images/thailand/phi-phi-island.webp";
+import railay from "@/assets/images/thailand/railay-krabi.webp";
+import phuket from "@/assets/images/thailand/phuket-beach.webp";
+
+// Suggested Bangkok–Pattaya range modelled on what Thrillophilia and
+// Pickyourtrail list for Indian travellers. Prices are placeholders — confirm
+// every package and price with Srivastava Route before launch.
+
+const BESTSELLER_ITINERARY = [
+  {
+    title: "Arrive Bangkok, Transfer to Pattaya",
+    detail:
+      "Meet & greet at Bangkok airport and drive to Pattaya (about 2 hours). Check in and relax by the beach. In the evening enjoy the famous Alcazar cabaret show. Overnight in Pattaya.",
+  },
+  {
+    title: "Coral Island Speedboat Tour",
+    detail:
+      "Speedboat to Coral Island (Koh Larn) for clear water, white sand and optional parasailing, sea-walk and jet-ski. Indian lunch on the island. Evening free to explore Walking Street. Overnight in Pattaya.",
+  },
+  {
+    title: "Pattaya to Bangkok",
+    detail:
+      "Visit the all-wood Sanctuary of Truth, then drive to Bangkok and check in. Evening free for shopping at Pratunam, Indra Square or MBK. Overnight in Bangkok.",
+  },
+  {
+    title: "Bangkok City & Temple Tour",
+    detail:
+      "Half-day city tour with the Golden Buddha (Wat Traimit) and Marble Temple, plus a gems gallery stop. Evening optional Chao Phraya dinner cruise. Overnight in Bangkok.",
+  },
+  {
+    title: "Departure",
+    detail: "Breakfast at the hotel, check out and transfer to Bangkok airport for your flight home with memories to keep.",
+  },
+];
+
+export const thailand: LandingConfig = {
+  slug: "thailand",
+  path: "/landing/thailand",
+  name: "Bangkok Pattaya",
+  tripLabel: "Thailand holiday",
+  specialist: "Thailand expert",
+  seo: {
+    title: "Bangkok Pattaya Tour Packages from ₹18,999 | Thailand Holidays | Srivastava Route",
+    description:
+      "Book Bangkok Pattaya tour packages with Coral Island, Alcazar show, Bangkok temples & Chao Phraya cruise. Honeymoon, family & group Thailand trips with hotels, transfers & sightseeing. Customise with Srivastava Route.",
+    keywords: [
+      "Bangkok Pattaya tour package",
+      "Thailand tour packages from India",
+      "Pattaya tour package",
+      "Bangkok Pattaya honeymoon package",
+      "Thailand family package",
+      "Coral Island Pattaya tour",
+      "Bangkok Pattaya Phuket package",
+      "Thailand holiday packages",
+    ],
+    ogImage: "/og-thailand-tour-packages.jpg",
+    ogAlt: "Bangkok Pattaya Tour Packages by Srivastava Route",
+  },
+  offer: { name: "Thailand Winter Sale", endsAt: null },
+  hero: {
+    eyebrow: "Bangkok · Pattaya · Coral Island · Phuket",
+    titleLead: "Bangkok Pattaya",
+    titleAccent: "Tour Packages",
+    sub: "Golden temples, island speedboats, rooftop evenings and the best street food in Asia. Handcrafted Thailand holidays for couples, families and friends.",
+    image: phiPhi,
+    imageAlt: "Longtail boat in the turquoise lagoon of Phi Phi Leh, framed by limestone cliffs",
+  },
+  priceUnit: "/adult",
+  priceNote: "Prices per adult on twin sharing, excluding international flights & visa fees.",
+  packageTypes: [
+    { key: "couple", label: "Honeymoon" },
+    { key: "family", label: "Family" },
+    { key: "friends", label: "Friends & Groups", short: "Friends" },
+    { key: "islands", label: "With Islands", short: "Islands" },
+    { key: "budget", label: "Budget" },
+    { key: "luxury", label: "Luxury" },
+  ],
+  packagesSection: {
+    eyebrow: "Handpicked",
+    title: "All Bangkok Pattaya Packages",
+    highlight: "Pattaya",
+    lead: "Every trip is planned by our Thailand experts, with handpicked hotels, private transfers, Indian meals on tours and the right mix of beach, city and nightlife. Book as it is or let us tailor it.",
+  },
+  packages: [
+    {
+      id: "bangkok-pattaya-getaway",
+      title: "Bangkok Pattaya Getaway with Coral Island",
+      route: ["Pattaya", "Bangkok"],
+      stops: ["2N Pattaya", "2N Bangkok"],
+      nights: 4,
+      price: 24999,
+      oldPrice: 34999,
+      image: pattayaAerial,
+      imageAlt: "Aerial view of Pattaya beach lined with hotels and boats in the bay",
+      types: ["family", "friends", "couple"],
+      highlights: ["Coral Island speedboat tour with lunch", "Alcazar cabaret show", "Bangkok city & temple tour"],
+      badge: "Bestseller",
+      perk: "FREE Coral Island Tour",
+      includes: ["hotel", "breakfast", "transfers", "sightseeing"],
+      itinerary: BESTSELLER_ITINERARY,
+      inclusions: [
+        "4 nights in 3★/4★ hotels with daily breakfast",
+        "Airport & Pattaya to Bangkok transfers",
+        "Coral Island speedboat tour with Indian lunch",
+        "Alcazar show tickets",
+        "Bangkok city & temple tour",
+      ],
+      exclusions: ["International flights", "Thailand visa / arrival fees", "Lunch & dinner unless mentioned", "Water sports & personal expenses"],
+    },
+    {
+      id: "bangkok-pattaya-budget",
+      title: "Bangkok Pattaya Budget Escape",
+      route: ["Pattaya", "Bangkok"],
+      stops: ["2N Pattaya", "1N Bangkok"],
+      nights: 3,
+      price: 18999,
+      oldPrice: 25999,
+      image: sanctuary,
+      imageAlt: "The carved wooden Sanctuary of Truth by the sea in Pattaya",
+      types: ["budget", "friends"],
+      highlights: ["Coral Island tour", "Sanctuary of Truth", "Shopping at Pratunam"],
+      includes: ["hotel", "breakfast", "transfers", "sightseeing"],
+    },
+    {
+      id: "bangkok-pattaya-honeymoon",
+      title: "Romantic Bangkok Pattaya Honeymoon",
+      route: ["Pattaya", "Bangkok"],
+      stops: ["3N Pattaya", "2N Bangkok"],
+      nights: 5,
+      price: 39999,
+      oldPrice: 54999,
+      image: coralIsland,
+      imageAlt: "Sun setting behind Coral Island across the sea from Pattaya",
+      types: ["couple", "luxury"],
+      highlights: ["Sea-view resort in Pattaya", "Chao Phraya dinner cruise", "Private airport transfers"],
+      badge: "Honeymoon Special",
+      perk: "FREE Candlelight Dinner",
+      includes: ["hotel", "breakfast", "transfers", "sightseeing", "cruise"],
+    },
+    {
+      id: "bangkok-pattaya-family",
+      title: "Bangkok Pattaya Family Fun",
+      route: ["Pattaya", "Bangkok"],
+      stops: ["2N Pattaya", "3N Bangkok"],
+      nights: 5,
+      price: 32999,
+      oldPrice: 44999,
+      image: nongNooch,
+      imageAlt: "Landscaped gardens and hills at Nong Nooch Tropical Garden, Pattaya",
+      types: ["family"],
+      highlights: ["Safari World & Marine Park with lunch", "Nong Nooch Tropical Garden", "Coral Island tour"],
+      perk: "Kid-friendly hotels",
+      includes: ["hotel", "breakfast", "transfers", "sightseeing"],
+    },
+    {
+      id: "bangkok-pattaya-phuket",
+      title: "Bangkok Pattaya Phuket Explorer",
+      route: ["Pattaya", "Bangkok", "Phuket"],
+      stops: ["2N Pattaya", "2N Bangkok", "2N Phuket"],
+      nights: 6,
+      price: 46999,
+      oldPrice: 62999,
+      image: phiPhi,
+      imageAlt: "Longtail boat in the turquoise lagoon of Phi Phi Leh island",
+      types: ["islands", "couple", "family"],
+      highlights: ["Phi Phi island tour by speedboat", "Phuket city & viewpoint tour", "Coral Island in Pattaya"],
+      perk: "FREE Phi Phi Island Tour",
+      includes: ["hotel", "breakfast", "transfers", "sightseeing"],
+    },
+    {
+      id: "bangkok-pattaya-krabi",
+      title: "Bangkok Pattaya Krabi Island Hopper",
+      route: ["Pattaya", "Bangkok", "Krabi"],
+      stops: ["2N Pattaya", "2N Bangkok", "3N Krabi"],
+      nights: 7,
+      price: 52999,
+      oldPrice: 69999,
+      image: railay,
+      imageAlt: "Limestone cliffs rising from the sea at Railay, Krabi",
+      types: ["islands", "friends"],
+      highlights: ["Krabi 4-island tour", "Railay beach by longtail boat", "Bangkok city tour"],
+      includes: ["hotel", "breakfast", "transfers", "sightseeing"],
+    },
+    {
+      id: "luxury-bangkok-pattaya",
+      title: "Luxury Bangkok & Pattaya",
+      route: ["Pattaya", "Bangkok"],
+      stops: ["2N Pattaya", "3N Bangkok"],
+      nights: 5,
+      price: 64999,
+      oldPrice: 84999,
+      image: bangkokNight,
+      imageAlt: "Bangkok skyscrapers lit up at twilight",
+      types: ["luxury", "couple"],
+      highlights: ["5★ hotels throughout", "Private car with driver", "Chao Phraya dinner cruise"],
+      badge: "Premium",
+      includes: ["hotel", "breakfast", "transfers", "sightseeing", "cruise"],
+    },
+    {
+      id: "pattaya-bangkok-friends",
+      title: "Pattaya Bangkok Friends Trip",
+      route: ["Pattaya", "Bangkok"],
+      stops: ["2N Pattaya", "2N Bangkok"],
+      nights: 4,
+      price: 22999,
+      oldPrice: 30999,
+      image: floatingMarket,
+      imageAlt: "Boats loaded with fruit at Damnoen Saduak floating market",
+      types: ["friends", "budget"],
+      highlights: ["Damnoen Saduak floating market", "Coral Island water sports", "Pattaya & Bangkok nightlife"],
+      includes: ["hotel", "breakfast", "transfers", "sightseeing"],
+    },
+  ],
+  facts: [
+    { label: "Best time", value: "Nov to Feb", icon: "calendar" },
+    { label: "Flight from Delhi", value: "~4 hrs to Bangkok", icon: "plane" },
+    { label: "Bangkok → Pattaya", value: "~2 hrs by road", icon: "car" },
+    { label: "Currency", value: "Thai Baht (THB)", icon: "currency" },
+    { label: "Time zone", value: "IST + 1:30", icon: "clock" },
+    { label: "Visa", value: "We check the latest rules", icon: "passport" },
+  ],
+  places: {
+    eyebrow: "Top Picks",
+    title: "Places You'll Fall For",
+    lead: "Start with Bangkok and Pattaya, then add an island or two. We handle the flights, ferries and transfers in between.",
+    cta: "Build My Thailand Trip",
+    items: [
+      { name: "Pattaya", tagline: "Beaches, shows & nightlife", image: pattayaAerial, alt: "Pattaya beach from above" },
+      { name: "Bangkok", tagline: "Temples, malls & rooftops", image: bangkokNight, alt: "Bangkok skyline at night" },
+      { name: "Coral Island", tagline: "Koh Larn speedboat day", image: coralIsland, alt: "Sunset over Coral Island" },
+      { name: "Phuket", tagline: "Thailand's biggest island", image: phuket, alt: "Clear water on a Phuket beach" },
+      { name: "Krabi", tagline: "Limestone cliffs & Railay", image: railay, alt: "Railay cliffs in Krabi" },
+      { name: "Phi Phi Islands", tagline: "Turquoise lagoons", image: phiPhi, alt: "Longtail boat at Phi Phi" },
+    ],
+  },
+  experiences: {
+    eyebrow: "Things to Do",
+    title: "Experiences Worth the Trip",
+    lead: "The moments our travellers talk about long after they're home. Most come included or as easy add-ons.",
+    items: [
+      { name: "Sanctuary of Truth", tagline: "A carved-teak temple on the Pattaya seafront", image: sanctuary, alt: "Sanctuary of Truth, Pattaya" },
+      { name: "Wat Arun", tagline: "Bangkok's Temple of Dawn on the river", image: watArun, alt: "Spires of Wat Arun in Bangkok" },
+      { name: "Grand Palace", tagline: "Golden roofs & the Emerald Buddha", image: grandPalace, alt: "Grand Palace roof at sunrise" },
+      { name: "Floating Market", tagline: "Shop from boats at Damnoen Saduak", image: floatingMarket, alt: "Damnoen Saduak floating market" },
+      { name: "Nong Nooch Garden", tagline: "Tropical gardens & cultural show", image: nongNooch, alt: "Nong Nooch Tropical Garden" },
+      { name: "Chao Phraya Cruise", tagline: "Dinner on the river under city lights", image: chaoPhraya, alt: "Boats on the Chao Phraya river at dusk" },
+    ],
+  },
+  gallery: {
+    title: "Thailand in pictures",
+    items: [
+      { image: grandPalace, alt: "Gilded roofs of the Grand Palace, Bangkok", caption: "Marvel at the Grand Palace" },
+      { image: floatingMarket, alt: "Boats laden with fruit at a floating market", caption: "Shop a floating market by boat" },
+      { image: sanctuary, alt: "Carved teak spires of the Sanctuary of Truth, Pattaya", caption: "Explore the Sanctuary of Truth" },
+      { image: coralIsland, alt: "Sunset over Coral Island", caption: "Speedboat to Coral Island" },
+      { image: watArunChapel, alt: "Wat Arun temple chapel in Bangkok", caption: "Immerse yourself in Buddhist culture" },
+      { image: nongNooch, alt: "Landscaped lawns at Nong Nooch Garden", caption: "Wander Nong Nooch Garden" },
+      { image: railay, alt: "Limestone cliffs above Railay beach, Krabi", caption: "Swim beneath Railay's cliffs" },
+      { image: chaoPhraya, alt: "Chao Phraya river at dusk, Bangkok", caption: "Cruise the Chao Phraya at dusk" },
+    ],
+  },
+  // SAMPLE reviews so the section can be laid out — they render in `npm run dev` only.
+  // Replace each with a real traveller's review (and drop `sample`) before it goes live.
+  reviews: {
+    eyebrow: "Real travellers, real stories",
+    title: "Heartfelt stories from our travellers",
+    items: [
+      {
+        sample: true,
+        name: "Sample traveller",
+        location: "Delhi",
+        rating: 5,
+        text: "Placeholder review: swap in a real traveller's words about their Bangkok Pattaya trip: the hotels, the Coral Island day, how smooth the transfers were and how the team helped along the way.",
+        packageId: "bangkok-pattaya-getaway",
+        photo: coralIsland,
+        photoAlt: "Sunset over Coral Island",
+      },
+      {
+        sample: true,
+        name: "Sample couple",
+        location: "Mumbai",
+        rating: 5,
+        text: "Placeholder review: a honeymoon couple's real experience goes here. Two to four sentences read best; keep their own wording and add the city they travelled from.",
+        packageId: "bangkok-pattaya-honeymoon",
+        photo: chaoPhraya,
+        photoAlt: "Chao Phraya river at dusk, Bangkok",
+      },
+      {
+        sample: true,
+        name: "Sample family",
+        location: "Lucknow",
+        rating: 5,
+        text: "Placeholder review: a family trip review goes here, ideally with a short phone video from the trip (add it under public/reviews and set `video`).",
+        packageId: "bangkok-pattaya-family",
+        photo: nongNooch,
+        photoAlt: "Landscaped lawns at Nong Nooch Garden",
+      },
+      {
+        sample: true,
+        name: "Sample friends trip",
+        location: "Pune",
+        rating: 5,
+        text: "Placeholder review: a friends' group review goes here. Real names, real photos and the package they booked make this section convincing.",
+        packageId: "pattaya-bangkok-friends",
+        photo: floatingMarket,
+        photoAlt: "Boats at a floating market",
+      },
+    ],
+  },
+  why: {
+    eyebrow: "Why Srivastava Route",
+    title: "Thailand, Planned the Way You Like It",
+    lead: "From airport pickup to the last shopping stop, our Thailand experts take care of the details so you can simply enjoy the holiday.",
+    main: watArunChapel,
+    mainAlt: "Ornate chapel and gardens at Wat Arun, Bangkok",
+    inset: phuket,
+    insetAlt: "Turquoise water at a Phuket beach",
+    stamp: ["Sawasdee", "Thailand"],
+    items: [
+      { title: "Tailor-Made", text: "Pick your hotels, pace and add-ons for a honeymoon, family or a friends' trip, built around you.", icon: "compass" },
+      { title: "Trusted & Safe", text: "Verified hotels and drivers, private transfers and 24/7 support while you travel.", icon: "shield" },
+      { title: "Indian Meals Sorted", text: "We pick tours and hotels with Indian and vegetarian meal options wherever possible.", icon: "food" },
+      { title: "Visa & Forex Guidance", text: "We check the latest Thailand entry rules for Indian passports and help with forex and SIMs.", icon: "passport" },
+    ],
+  },
+  steps: [
+    { title: "Share your plan", text: "Tell us your dates, departure city and who's travelling." },
+    { title: "Get a free itinerary", text: "A Thailand expert calls you with a day-by-day plan and the best price." },
+    { title: "Fly & enjoy", text: "Hotels, transfers and tours confirmed, with support on WhatsApp throughout." },
+  ],
+  faq: {
+    title: "Bangkok Pattaya FAQs",
+    lead: "Quick answers to what Indian travellers ask us most about Thailand.",
+    items: [
+      {
+        q: "What is the best time to visit Bangkok and Pattaya?",
+        a: "November to February is the best time: cool, dry and perfect for beaches and sightseeing. March to May is hot, while June to October is the rainy season with lower hotel prices and fewer crowds.",
+      },
+      {
+        q: "How many days are enough for a Bangkok Pattaya trip?",
+        a: "4 nights / 5 days is ideal: 2 nights in Pattaya for Coral Island and the shows, and 2 nights in Bangkok for temples and shopping. Add 2 to 3 nights in Phuket or Krabi if you want island time.",
+      },
+      {
+        q: "Do Indians need a visa for Thailand?",
+        a: "Thailand's entry rules for Indian passport holders have changed several times in recent years, so we confirm the current requirement (and any arrival registration) when you book, and guide you through the paperwork.",
+      },
+      {
+        q: "How far is Pattaya from Bangkok?",
+        a: "Pattaya is about 150 km from Bangkok, roughly 2 hours by road from Suvarnabhumi Airport. All our packages include this transfer.",
+      },
+      {
+        q: "Are flights included in the package price?",
+        a: "The prices shown are land packages without international flights. Tell us your departure city and we'll add the best available flights to your quote.",
+      },
+      {
+        q: "Will we get Indian and vegetarian food?",
+        a: "Yes. Bangkok and Pattaya have plenty of Indian restaurants, and we include Indian lunches on tours like Coral Island wherever possible. Jain and vegetarian needs can be noted in your enquiry.",
+      },
+    ],
+  },
+  credits: [
+    { what: "Bangkok skyline at sunset", who: "Azreey", license: "CC BY-SA 3.0", url: "https://commons.wikimedia.org/wiki/File:Bangkok_-_City_skyline_at_sunset.JPG" },
+    { what: "Chao Phraya river at dusk", who: "TomaszSwatowski", license: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Chao_Phraya_river_sunset.jpg" },
+    { what: "Pattaya beach aerial", who: "PattayaPatrol", license: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:DZ6_0620_Aerial_view_of_a_bustling_coastal_city_with_a_long_sandy_beach_lined_by_hotels_and_palm_trees_and_numerous_boats_dotting_the_calm_bay_under_a_cloudy_sky.jpg" },
+    { what: "Bangkok skyline at twilight", who: "Sergei Gussev", license: "CC BY 4.0", url: "https://commons.wikimedia.org/wiki/File:Twilight_over_the_modern_city_skyline_in_Ratchadamri_district,_Bangkok,_Thailand,_July_2019_-_Flickr_-_sergei.gussev.jpg" },
+    { what: "Wat Arun", who: "Diego Delso", license: "CC BY-SA 3.0", url: "https://commons.wikimedia.org/wiki/File:Templo_Wat_Arun,_Bangkok,_Tailandia,_2013-08-22,_DD_05.jpg" },
+    { what: "Wat Arun chapel", who: "Diego Delso", license: "CC BY-SA 3.0", url: "https://commons.wikimedia.org/wiki/File:Templo_Wat_Arun,_Bangkok,_Tailandia,_2013-08-22,_DD_30.jpg" },
+    { what: "Grand Palace roof", who: "Bjørn Erik Pedersen", license: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:A_roof_of_a_building_at_the_Grand_Palace,_Bangkok,_sunrise,_2017.jpg" },
+    { what: "Sunset on Koh Larn", who: "rayhol", license: "CC BY-SA 3.0", url: "https://commons.wikimedia.org/wiki/File:Sunset_on_Koh_Larn_-_panoramio.jpg" },
+    { what: "Sanctuary of Truth", who: "Rolf Heinrich, Köln", license: "CC BY 3.0", url: "https://commons.wikimedia.org/wiki/File:Sanctuary_of_Truth_2016-02-19-02.jpg" },
+    { what: "Damnoen Saduak floating market", who: "Andrew Ly", license: "CC0", url: "https://commons.wikimedia.org/wiki/File:Damnoen_Saduak_Floating_Market,_Damnoen_Saduak,_Thailand_(Unsplash).jpg" },
+    { what: "Nong Nooch Botanical Garden", who: "Christoph Jackel (WMDE)", license: "CC BY 4.0", url: "https://commons.wikimedia.org/wiki/File:Overview_Nong_Nooch_Botanical_Garden.jpg" },
+    { what: "Phi Phi Leh", who: "Diego Delso", license: "CC BY-SA 3.0", url: "https://commons.wikimedia.org/wiki/File:Isla_Phi_Phi_Lay,_Tailandia,_2013-08-19,_DD_04.JPG" },
+    { what: "Railay, Krabi", who: "Vyacheslav Argenberg", license: "CC BY 4.0", url: "https://commons.wikimedia.org/wiki/File:Railay,_Krabi,_Thailand.jpg" },
+    { what: "Phuket beach", who: "Mussi Katz", license: "Public domain", url: "https://commons.wikimedia.org/wiki/File:20160220_111856_Phuket_beach_-_35782167805.jpg" },
+  ],
+  whatsapp: {
+    greeting: "Hi! I'm interested in your Bangkok Pattaya tour packages.",
+    teasers: ["Sawasdee! Planning a Thailand trip? 🌴", "Need help picking the right trip?", "Hey! Liked a package? Connect with us 👋", "Chat with a Thailand expert now →"],
+  },
+  messagePlaceholder: "Departure city, honeymoon or family trip, hotel preference, add Phuket/Krabi…",
+};
