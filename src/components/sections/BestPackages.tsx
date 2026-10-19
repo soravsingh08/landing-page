@@ -28,7 +28,7 @@ export default function BestPackages({ config }: { config: LandingConfig }) {
             const unit = unitFor(config, pkg);
             return (
               <Link key={pkg.id} href={packagePath(config, pkg)} className="sr-best" data-aos="fade-up" data-aos-delay={i * 80}>
-                <Image quality={90} src={pkg.image} alt={pkg.imageAlt} fill placeholder="blur" sizes="(max-width: 767px) 80vw, (max-width: 1023px) 45vw, 360px" />
+                <Image quality={80} src={pkg.image} alt={pkg.imageAlt} fill placeholder="blur" sizes="(max-width: 767px) 80vw, (max-width: 1023px) 45vw, 360px" />
                 <span className="sr-best-shade" aria-hidden="true" />
 
                 {badge && <span className="sr-best-badge">{badge}</span>}

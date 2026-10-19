@@ -20,10 +20,10 @@ export default function WhyUs({ config }: { config: LandingConfig }) {
       <div className="sr-container sr-why">
         <div className="sr-why-media" data-aos="fade-right">
           <div className="sr-why-img sr-why-img--main">
-            <Image quality={90} src={why.main} alt={why.mainAlt} fill placeholder="blur" sizes="(max-width: 900px) 90vw, 460px" />
+            <Image quality={80} src={why.main} alt={why.mainAlt} fill placeholder="blur" sizes="(max-width: 900px) 90vw, 460px" />
           </div>
           <div className="sr-why-img sr-why-img--inset">
-            <Image quality={90} src={why.inset} alt={why.insetAlt} fill placeholder="blur" sizes="220px" />
+            <Image quality={80} src={why.inset} alt={why.insetAlt} fill placeholder="blur" sizes="220px" />
           </div>
           <div className="sr-why-stamp" aria-hidden="true">
             <span>{why.stamp[0]}</span>

@@ -158,7 +158,7 @@ export default function PackagePage({ config: source, pkg }: Props) {
         {/* ---------- hero ---------- */}
         <section id="top" className="sr-pd-hero" aria-labelledby="sr-pd-title">
           <Image
-            quality={90}
+            quality={80}
             src={pkg.heroImage ?? pkg.image}
             alt={pkg.heroImageAlt ?? pkg.imageAlt}
             fill
@@ -196,7 +196,7 @@ export default function PackagePage({ config: source, pkg }: Props) {
                 <EnquireButton packageId={pkg.id} source="package-hero" className="sr-hero-btn sr-hero-btn--primary">
                   Get best price <FiArrowRight aria-hidden="true" />
                 </EnquireButton>
-                <a href={whatsappLink(greeting)} target="_blank" rel="noopener noreferrer" className="sr-hero-btn sr-hero-btn--glass">
+                <a href={whatsappLink(greeting)} target="_blank" rel="noopener noreferrer" className="sr-hero-btn sr-hero-btn--glass sr-pd-wa-btn">
                   <FaWhatsapp aria-hidden="true" /> Chat on WhatsApp
                 </a>
               </div>
@@ -279,7 +279,7 @@ export default function PackagePage({ config: source, pkg }: Props) {
                         {d.image && (
                           <div className="sr-pd-day-media">
                             <Image
-                              quality={90}
+                              quality={80}
                               src={d.image}
                               alt={d.imageAlt ?? d.title}
                               fill
@@ -407,7 +407,7 @@ export default function PackagePage({ config: source, pkg }: Props) {
                 {photos.slice(0, photos.length >= 5 ? 5 : 3).map((p, i) => (
                   <figure key={p.image.src} data-aos="fade-up" data-aos-delay={i * 60}>
                     <Image
-                      quality={90}
+                      quality={80}
                       src={p.image}
                       alt={p.alt}
                       fill

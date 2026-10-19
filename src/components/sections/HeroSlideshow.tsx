@@ -17,6 +17,9 @@ export default function HeroSlideshow({ slides }: { slides: Slide[] }) {
   const loaded = useRef<boolean[]>([]);
   const waiting = useRef(false);
   const activeRef = useRef(0);
+  // The other photos start downloading only after the first one has loaded, so they don't
+  // compete with it for bandwidth on the first visit.
+  const [warm, setWarm] = useState(false);
 
   useEffect(() => {
     activeRef.current = active;
@@ -40,6 +43,7 @@ export default function HeroSlideshow({ slides }: { slides: Slide[] }) {
 
   const onLoad = (i: number) => {
     loaded.current[i] = true;
+    if (i === 0) setWarm(true);
     if (waiting.current && i === (activeRef.current + 1) % slides.length) {
       waiting.current = false;
       setActive(i);
@@ -50,20 +54,21 @@ export default function HeroSlideshow({ slides }: { slides: Slide[] }) {
     <div className="sr-hero-media">
       {slides.map((s, i) => (
         <div key={s.caption} className={`sr-hero-slide${i === active ? " is-active" : ""}`} aria-hidden={i !== active}>
-          <Image
-            quality={90}
-            src={s.image}
-            alt={s.alt}
-            fill
-            priority={i === 0}
-            loading={i === 0 ? undefined : "eager"}
-            fetchPriority={i === 0 ? "high" : "low"}
-            placeholder="blur"
-            sizes="100vw"
-            className="sr-hero-img"
-            style={s.position ? { objectPosition: s.position } : undefined}
-            onLoad={() => onLoad(i)}
-          />
+          {(i === 0 || warm) && (
+            <Image
+              quality={80}
+              src={s.image}
+              alt={s.alt}
+              fill
+              priority={i === 0}
+              fetchPriority={i === 0 ? "high" : "low"}
+              placeholder="blur"
+              sizes="100vw"
+              className="sr-hero-img"
+              style={s.position ? { objectPosition: s.position } : undefined}
+              onLoad={() => onLoad(i)}
+            />
+          )}
         </div>
       ))}
     </div>

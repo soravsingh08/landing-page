@@ -44,7 +44,7 @@ export default function ReviewMedia({ review }: { review: Review }) {
   if (!review.photo) return null;
   return (
     <div className="sr-review-media">
-      <Image quality={90} src={review.photo} alt={review.photoAlt ?? ""} fill placeholder="blur" sizes="(max-width: 560px) 90vw, 220px" />
+      <Image quality={80} src={review.photo} alt={review.photoAlt ?? ""} fill placeholder="blur" sizes="(max-width: 560px) 90vw, 220px" />
     </div>
   );
 }

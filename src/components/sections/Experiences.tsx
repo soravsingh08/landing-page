@@ -21,7 +21,7 @@ export default function Experiences({ config }: { config: LandingConfig }) {
           {ex.items.map((item, i) => (
             <article key={item.name} className="sr-exp" data-aos="fade-up" data-aos-delay={(i % 3) * 90}>
               <div className="sr-exp-media">
-                <Image quality={90} src={item.image} alt={item.alt} fill placeholder="blur" sizes="(max-width: 767px) 80vw, (max-width: 1100px) 45vw, 380px" />
+                <Image quality={80} src={item.image} alt={item.alt} fill placeholder="blur" sizes="(max-width: 767px) 80vw, (max-width: 1100px) 45vw, 380px" />
                 <span className="sr-exp-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
               </div>
               <div className="sr-exp-body">

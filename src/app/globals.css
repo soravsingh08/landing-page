@@ -1182,8 +1182,18 @@ footer {
     letter-spacing: 0.12em;
   }
 
-  .sr-hero-sub {
-    font-size: 15.5px;
+  /* phones: title, price, proof and one button; the description would crowd the photo */
+  .sr-hero .sr-hero-sub {
+    display: none;
+  }
+
+  .sr-hero .sr-hero-title {
+    margin-top: 14px;
+    font-size: 40px;
+  }
+
+  .sr-hero .sr-hero-price {
+    margin-top: 18px;
   }
 
   .sr-hero-ctas .sr-hero-btn {

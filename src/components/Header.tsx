@@ -43,7 +43,7 @@ export default function Header({ home = "" }: { home?: string }) {
 
       <div className="sr-nav">
         <a href={`${home}#top`} className="sr-logo" aria-label={home ? `${SITE.brand}: ${config.name} packages` : `${SITE.brand}: back to top`}>
-          <Image quality={90} src={logo} alt={`${SITE.brand} Travel Company`} priority sizes="170px" />
+          <Image quality={80} src={logo} alt={`${SITE.brand} Travel Company`} priority sizes="170px" />
         </a>
 
         <div className="sr-nav-actions">

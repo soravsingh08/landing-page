@@ -15,13 +15,12 @@ import ayodhyaSaryuNight from "@/assets/images/ayodhya-saryu-night.jpg";
 import ayodhyaDham from "@/assets/images/ayodhya-dham-riverfront.jpg";
 import sangam from "@/assets/images/prayagraj-triveni-sangam.jpg";
 
-// The six packages come from the client's "Selected Packages — Developer Brief":
-// prices, itineraries, inclusions and exclusions as listed there, plus the client's
-// clarifications (breakfast in every package; boat rides never included, arranged
-// on request). Only Varanasi & Ayodhya has a confirmed price basis (per person) —
-// the others show their price without one until the client confirms it.
+// Six packages come from the client's "Selected Packages — Developer Brief", plus the
+// bestseller Varanasi Prayagraj Ayodhya from srivastavaroute.in: prices, itineraries,
+// inclusions and exclusions as listed there, with the client's clarifications (breakfast
+// in every package; boat rides never included, arranged on request). All prices are
+// per person (confirmed with the client).
 // "Was" prices follow the discount levels of the earlier packages (24–26% off).
-const PRICE_BASIS_TBC = "";
 const BOAT_RIDE_ON_REQUEST = "Boat ride: arranged on request, paid separately";
 
 export const banaras: LandingConfig = {
@@ -81,10 +80,10 @@ export const banaras: LandingConfig = {
     title: "Our Best Packages",
     lead: "The trips travellers ask us about most, planned with darshan timings and hotels near the ghats.",
     items: [
+      { packageId: "varanasi-prayagraj-ayodhya", badge: "Bestseller" },
       { packageId: "varanasi-ayodhya", badge: "Most searched" },
       { packageId: "varanasi-tour", badge: "Popular" },
       { packageId: "ayodhya-ram-darbar", badge: "Trending" },
-      { packageId: "prayagraj-tour", badge: "Sangam snan" },
     ],
   },
   packagesSection: {
@@ -94,6 +93,75 @@ export const banaras: LandingConfig = {
     lead: "Every itinerary is planned by our Kashi specialists, with comfortable stays, private cabs, local guides and darshan timings sorted for you. Pick one as it is, or let us tailor it.",
   },
   packages: [
+    // Srivastava Route's bestseller, as listed on srivastavaroute.in (price per person, itinerary,
+    // inclusions and exclusions from the live package page). Boat ride per the client brief: on request.
+    {
+      id: "varanasi-prayagraj-ayodhya",
+      title: "Varanasi Prayagraj Ayodhya Tour",
+      route: ["Varanasi", "Prayagraj", "Ayodhya"],
+      nights: 3,
+      price: 11999,
+      oldPrice: 15999,
+      image: aarti,
+      imageAlt: "Crowds watching the evening Ganga Aarti on the ghats of Varanasi",
+      heroImage: heroAartiAerial,
+      heroImageAlt: "Hundreds of boats gathered on the Ganga for the Ganga Aarti at Dashashwamedh Ghat, seen from above",
+      summary:
+        "Explore the spiritual heart of India with the Varanasi, Ayodhya and Prayagraj tour. Witness the divine Ganga Aarti in Varanasi, seek blessings at Lord Ram's birthplace in Ayodhya, and experience the sacred Triveni Sangam in Prayagraj.",
+      types: ["pilgrimage", "family"],
+      highlights: ["Ganga Aarti at Dashashwamedh", "Triveni Sangam", "Ram Janmabhoomi darshan"],
+      badge: "Bestseller",
+      includes: ["hotel", "breakfast", "transfers", "sightseeing", "guide"],
+      itinerary: [
+        {
+          title: "Arrival in Varanasi",
+          city: "Varanasi",
+          detail:
+            "Arrival at Varanasi. Check-in at the hotel and relax. In the evening, witness the divine Ganga Aarti at Dashashwamedh Ghat.",
+          highlights: ["Hotel check-in", "Ganga Aarti", "Dashashwamedh Ghat"],
+          stay: "Overnight stay in Varanasi",
+          image: heroAarti,
+          imageAlt: "Priests raising flaming lamps during the evening Ganga Aarti",
+        },
+        {
+          title: "Varanasi Sightseeing to Prayagraj",
+          city: "Varanasi → Prayagraj",
+          detail:
+            "Early morning boat ride on the Ganga (optional, paid separately). Visit Kashi Vishwanath Temple, Annapurna Temple and Sankat Mochan Temple, then drive to Prayagraj with en-route sightseeing.",
+          highlights: ["Kashi Vishwanath", "Annapurna Temple", "Sankat Mochan"],
+          stay: "Overnight stay in Prayagraj",
+          image: kashiCorridor,
+          imageAlt: "Ganga Dwar gateway of the Kashi Vishwanath corridor",
+        },
+        {
+          title: "Prayagraj to Ayodhya",
+          city: "Prayagraj → Ayodhya",
+          detail:
+            "Visit the Triveni Sangam, Hanuman Mandir and Anand Bhawan. After sightseeing, drive to Ayodhya and visit Ram Janmabhoomi, Hanuman Garhi and Kanak Bhawan.",
+          highlights: ["Triveni Sangam", "Anand Bhawan", "Ram Janmabhoomi", "Hanuman Garhi"],
+          stay: "Overnight stay in Ayodhya",
+          image: sangam,
+          imageAlt: "Pilgrims and boats on the river at Triveni Sangam",
+        },
+        {
+          title: "Ayodhya Departure",
+          city: "Ayodhya",
+          detail: "Morning temple visits and local sightseeing. Tour ends with departure from Ayodhya.",
+          stay: "Tour ends with departure",
+          image: ayodhyaMandir,
+          imageAlt: "Shri Ram Janmabhoomi Mandir in Ayodhya",
+        },
+      ],
+      inclusions: [
+        "Airport pickup and drop",
+        "All sightseeing",
+        "Hotel with breakfast",
+        "Guide included",
+        "Wheelchair, toll and parking",
+      ],
+      exclusions: ["Lunch and dinner", "Boat ride", "Room personal expenses"],
+      onRequest: [BOAT_RIDE_ON_REQUEST],
+    },
     {
       id: "varanasi-ayodhya",
       title: "Varanasi & Ayodhya Package",
@@ -152,7 +220,6 @@ export const banaras: LandingConfig = {
       nights: 2,
       price: 6999,
       oldPrice: 9499,
-      priceUnit: PRICE_BASIS_TBC,
       image: ayodhyaMandir,
       imageAlt: "Shri Ram Janmabhoomi Mandir in Ayodhya",
       heroImage: ayodhyaSaryuNight,
@@ -209,7 +276,6 @@ export const banaras: LandingConfig = {
       nights: 2,
       price: 7999,
       oldPrice: 10499,
-      priceUnit: PRICE_BASIS_TBC,
       image: aartiPriest,
       imageAlt: "Priest performing the evening Ganga Aarti with fire lamps in Varanasi",
       heroImage: heroAarti,
@@ -269,7 +335,6 @@ export const banaras: LandingConfig = {
       nights: 2,
       price: 8999,
       oldPrice: 11999,
-      priceUnit: PRICE_BASIS_TBC,
       image: mahabodhi,
       imageAlt: "Mahabodhi Temple in Bodhgaya",
       summary:
@@ -318,7 +383,6 @@ export const banaras: LandingConfig = {
       nights: 2,
       price: 8999,
       oldPrice: 11999,
-      priceUnit: PRICE_BASIS_TBC,
       image: sangam,
       imageAlt: "Pilgrims and boats on the river at Triveni Sangam, Prayagraj",
       summary:
@@ -368,7 +432,6 @@ export const banaras: LandingConfig = {
       nights: 1,
       price: 7499,
       oldPrice: 9999,
-      priceUnit: PRICE_BASIS_TBC,
       image: ayodhyaDham,
       imageAlt: "Temples and ghats along the Saryu riverfront in Ayodhya",
       summary: "A short Ayodhya darshan trip: Shri Ram Janmabhoomi, Hanuman Garhi, Kanak Bhawan and the temples of the old city.",

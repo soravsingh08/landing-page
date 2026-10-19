@@ -16,7 +16,7 @@ export default function Destinations({ config }: { config: LandingConfig }) {
         <div className="sr-dest-grid">
           {places.items.map((d, i) => (
             <div key={d.name} className={`sr-dest${i === 0 ? " sr-dest--tall" : ""}`} data-aos="zoom-in" data-aos-delay={i * 70}>
-              <Image quality={90} src={d.image} alt={d.alt} fill placeholder="blur" sizes="(max-width: 767px) 50vw, 33vw" />
+              <Image quality={80} src={d.image} alt={d.alt} fill placeholder="blur" sizes="(max-width: 767px) 50vw, 33vw" />
               <div className="sr-dest-shade" aria-hidden="true" />
               <div className="sr-dest-body">
                 <h3>{d.name}</h3>
