@@ -813,6 +813,23 @@
     aspect-ratio: 16 / 9;
   }
 
+  /* place chips: two per line, each a full half-width pill */
+  .sr-pd-days .sr-pd-chips {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .sr-pd-days .sr-pd-chips li {
+    min-width: 0;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .sr-pd-days .sr-pd-chips li svg {
+    flex-shrink: 0;
+  }
+
   .sr-pd-band {
     flex-direction: column;
     align-items: stretch;
