@@ -813,21 +813,23 @@
     aspect-ratio: 16 / 9;
   }
 
-  /* place chips: two per line, each a full half-width pill */
-  .sr-pd-days .sr-pd-chips {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* place chips: small pills sized to their text, as many per line as fit (usually two);
+     the text never wraps inside a pill */
+  .sr-pd-chips {
     gap: 6px;
   }
 
-  .sr-pd-days .sr-pd-chips li {
-    min-width: 0;
-    padding: 5px 10px;
-    font-size: 12px;
+  .sr-pd-chips li {
+    max-width: 100%;
+    gap: 4px;
+    padding: 4px 9px;
+    font-size: 11.5px;
+    white-space: nowrap;
   }
 
-  .sr-pd-days .sr-pd-chips li svg {
+  .sr-pd-chips li svg {
     flex-shrink: 0;
+    font-size: 11px;
   }
 
   .sr-pd-band {
